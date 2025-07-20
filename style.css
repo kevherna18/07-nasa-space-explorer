@@ -122,12 +122,18 @@ button:hover {
   height: 200px;
   object-fit: cover;
   border-radius: 4px;
+  transition: transform 0.3s ease; /* Add smooth transition for scaling effect */
+}
+
+/* Add hover effect specifically to images */
+.gallery-item:hover img {
+  transform: scale(1.05); /* Scale image slightly on hover */
 }
 
 .gallery-item p {
   margin-top: 10px;
   padding: 5px;
-  font-size: 14px;
+  font-size: 18px; /* Make text bigger for better readability */
 }
 
 /* Placeholder content */
@@ -141,4 +147,75 @@ button:hover {
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.8); /* Black with transparency */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto; /* Center the modal */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  color: #E4002B; /* Changed to red color */
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+}
+
+#modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.modal-info h2 {
+  color: #212121;
+  margin-bottom: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+.modal-info p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Make gallery items clickable */
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  overflow: hidden; /* Ensure scaled image doesn't overflow the container */
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
 }
